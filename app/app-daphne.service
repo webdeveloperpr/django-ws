@@ -1,0 +1,12 @@
+[Unit]
+Description=App Daphne Service
+After=network.target
+
+[Service]
+Type=simple 
+User=root
+WorkingDirectory=/Users/webdeveloperpr/code/django-ws/app
+ExecStart=/Users/webdeveloperpr/code/django-ws/venv/bin/daphne -p 9001 app.asgi:application   
+
+[Install]
+WantedBy=multi-user.target
